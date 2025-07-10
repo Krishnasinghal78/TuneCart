@@ -1,0 +1,299 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000000, #2a2a72, #8e44ad);
+    color: white;
+    height: 100vh; /* Ensure body takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar h1 {
+    font-size: 32px;
+    color: white;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar nav ul li {
+    list-style: none;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main Layout */
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    flex-grow: 1; /* Ensure container grows to fill remaining space */
+    overflow: auto; /* Make sure content scrolls if too long */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li button {
+    background-color: #8f3da0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s;
+}
+
+.sidebar ul li button:hover {
+    background-color: #5f2b8e;
+}
+
+/* Songs List */
+.song-list {
+    flex: 1;
+}
+
+.songs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.song-item {
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.song-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.song-item button {
+    background-color: #8f3da0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin: 5px 0;
+}
+
+.song-item button:hover {
+    background-color: #5f2b8e;
+}
+
+/* Sticky Media Player at the Bottom */
+.media-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #8f3da0;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.media-player .now-playing {
+    display: flex;
+    align-items: center;
+}
+
+.media-player .now-playing img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.media-player .now-playing h4 {
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.media-player .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.media-player button {
+    background: none;
+    border: none;
+    color: rgb(14, 13, 13);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.media-player button:hover {
+    color: #8f3da0;
+}
+/* Sidebar Playlist Item Styling */
+/* Sidebar Playlist Item Styling */
+.playlist-item {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.playlist-item h4 {
+    color: #fff; /* White color for the playlist name */
+    font-size: 1.2em;
+    margin: 0;
+    padding: 10px;
+    background-color: #a62795; /* Background color for the playlist item */
+    border-radius: 5px;
+    cursor: pointer; /* Make it look clickable */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover effect */
+.playlist-item h4:hover {
+    background-color: #852290; /* Change background color on hover */
+}
+
+/* Button styles */
+.playlist-item button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.playlist-item button:hover {
+    background-color: #0056b3;
+}
+/* Modal styles */
+#create-playlist-modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fix position to cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    z-index: 1000; /* Ensure it's on top of other content */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+#close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+}
+
+#close-modal-btn:hover {
+    color: #000;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #131010;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #380c62;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #9b28b3;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    #close-modal-btn {
+        font-size: 20px;
+    }
+}

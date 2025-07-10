@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Background */
+body {
+    background-color: #1e1e1e; /* Dark background */
+    color: #fff; /* Light text */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4B0082; /* Deep purple */
+    padding: 15px;
+    color: white;
+}
+
+.navbar h1 {
+    font-size: 2em;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+/* Instrument List */
+.instrument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.instrument-item {
+    width: 30%;
+    border: 1px solid #4B0082; /* Purple border */
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #2e2e2e; /* Dark gray background */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.instrument-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(75, 0, 130, 0.8); /* Purple shadow */
+}
+
+.instrument-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.instrument-item h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #FFD700; /* Gold color */
+}
+
+.instrument-item p {
+    font-size: 1em;
+    color: #bbb;
+}
+
+.instrument-item strong {
+    font-size: 1.2em;
+    color: #fff; /* White price */
+}
+
+/* Modal */
+.instrument-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.instrument-modal-content {
+    background-color: #2e2e2e; /* Dark background */
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #4B0082; /* Purple border */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: #FFD700;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #fff;
+}
+
+.instrument-modal img {
+    width: 50%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #4B0082; /* Purple background */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6a0dad; /* Lighter purple on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .instrument-item {
+        width: 45%;
+    }
+
+    .instrument-modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .instrument-item {
+        width: 100%;
+    }
+
+    .instrument-modal-content {
+        width: 95%;
+    }
+}
